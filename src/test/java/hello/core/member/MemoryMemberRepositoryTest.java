@@ -3,9 +3,9 @@ package hello.core.member;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class MemoryRepositoryTest {
+class MemoryMemberRepositoryTest {
 
-    private final MemberRepository memberRepository = new MemoryRepository();
+    private final MemberRepository memberRepository = new MemoryMemberRepository();
 
     @Test
     public void saveAndFind() {
