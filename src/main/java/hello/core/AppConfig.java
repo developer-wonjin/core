@@ -19,13 +19,14 @@ public class AppConfig {
         System.out.println("AppConfig 생성자호출");
     }
 
-    // 서비스단
+    // 서비스단MemoryMemberRepository
     @Bean
     public MemberService memberService(){
         System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
+    // 서비스단MemoryMemberRepository
     @Bean
     public OrderService orderService(){
         System.out.println("call AppConfig.orderService");
@@ -41,10 +42,10 @@ public class AppConfig {
         return new MemoryMemberRepository();
     }
 
+    // Policy
     @Bean
     public DiscountPolicy discountPolicy(){
         System.out.println("call AppConfig.discountPolicy");
         return new RateDiscountPolicy();//return new FixDiscountPolicy();
-
     }
 }

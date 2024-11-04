@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
 // 자동구성
+@Configuration
 @ComponentScan(
     excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 )
@@ -28,10 +29,9 @@ public class AutoAppConfig {
 
     // [수동빈등록]
     // 자동등록 된 빈과 충돌이 발생하지 않으며 아래 수동등록 빈으로 덮어써짐
-    @Bean(name = "memoryMemberRepository")
-    public MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
-
-
+//    @Bean(name = "memoryMemberRepository")
+//    public MemberRepository memberRepository() {
+//        System.out.println("AutoAppConfig의 memberRepository");
+//        return new MemoryMemberRepository();
+//    }
 }

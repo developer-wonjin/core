@@ -2,10 +2,11 @@ package hello.core.member;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 public class MemberServiceImpl implements MemberService{
 
@@ -15,7 +16,7 @@ public class MemberServiceImpl implements MemberService{
     // 구체클래스 MemoryRepository에 의존하기 때문에 DbRepository로 교체하고 싶을 때 MemberServiceImpl(클라이언트)를 수정해야한다.
     //private final MemberRepository memberRepository = new MemoryRepository();
 
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Override
     public void join(Member member) {

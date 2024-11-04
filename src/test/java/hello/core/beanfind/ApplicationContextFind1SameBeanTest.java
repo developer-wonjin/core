@@ -27,7 +27,6 @@ public class ApplicationContextFind1SameBeanTest {
         public MemberRepository memberRepository2() {
             return new MemoryMemberRepository();
         }
-
     }
 
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SameBeanConfig.class);
@@ -58,6 +57,4 @@ public class ApplicationContextFind1SameBeanTest {
         System.out.println(beansOfType);
         assertThat(beansOfType.size()).isEqualTo(2);
     }
-
-
 }
